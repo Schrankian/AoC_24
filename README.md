@@ -8,3 +8,6 @@ Alternatively, just use `cargo run -p day1` to run a single workspace directly (
 
 ## Day 1
 - [Historian Hysteria](https://adventofcode.com/2024/day/1) --> ([Input](https://adventofcode.com/2024/day/1/input))
+
+## Day 2
+- [Red-Nosed Reports](https://adventofcode.com/2024/day/2) --> ([Input](https://adventofcode.com/2024/day/2/input))
