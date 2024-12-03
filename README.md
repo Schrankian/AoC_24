@@ -11,3 +11,6 @@ Alternatively, just use `cargo run -p day1` to run a single workspace directly (
 
 ## Day 2
 - [Red-Nosed Reports](https://adventofcode.com/2024/day/2) --> ([Input](https://adventofcode.com/2024/day/2/input))
+
+## Day 3
+- [Mull It Over](https://adventofcode.com/2024/day/3) --> ([Input](https://adventofcode.com/2024/day/3/input))
