@@ -17,3 +17,6 @@ Alternatively, just use `cargo run -p day1` to run a single workspace directly (
 
 ## Day 4
 - [Ceres Search](https://adventofcode.com/2024/day/4) -> ([Input](https://adventofcode.com/2024/day/4/input))
+
+## Day 5
+- [Print Queue](https://adventofcode.com/2024/day/5) -> ([Input](https://adventofcode.com/2024/day/5/input))
