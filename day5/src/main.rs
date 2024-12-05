@@ -1,7 +1,7 @@
 use std::{collections::{HashMap, HashSet}, fs};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = fs::read_to_string("./day5/src/input/printRules.txt").expect("Error reading file");    
+    let input = fs::read_to_string("./day5/src/input/printRules.txt").expect("Error reading file").replace("\r\n", "\n");    
     let (rule_input, puzzle_input) = input.split_once("\n\n").expect("Error splitting input");
     
     let rules = rule_input.lines().map(|line| {
@@ -40,6 +40,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     -------------------------------*/
     let mut total2 = 0;
 
+    for input in &incorrect {
+        let mut input = input.clone();
+        while let Some((pos1, pos2)) = get_rule_violation(&input, &rules) {
+            input.swap(pos1, pos2);
+        }
+
+        total2 += get_middle(&input);
+    }
+
+    println!("Total 2: {}", total2);
+
     Ok(())
 }
 
@@ -57,6 +68,23 @@ fn violates_rule(input: &Vec<usize>, rules: &HashMap<usize, Vec<usize>>) -> bool
     }
 
     false
+}
+
+// If rule violation, return (position1, position2)
+fn get_rule_violation(input: &Vec<usize>, rules: &HashMap<usize, Vec<usize>>) -> Option<(usize, usize)> {
+    let mut should_not_be_there: Vec<(usize, usize)> = Vec::new(); // (position, number)
+    for i in 0..input.len() {
+        if let Some(rule_violation) = should_not_be_there.iter().find(|(_, rule_number)| *rule_number == input[i]) {
+            return Some((rule_violation.0, i));
+        }
+        if let Some(constrains) = rules.get(&input[i]) {
+            constrains.iter().for_each(|num| {
+                should_not_be_there.push((i, *num));
+            });
+        }
+    }
+
+    None
 }
 
 fn get_middle(input: &Vec<usize>) -> usize {
