@@ -20,3 +20,6 @@ Alternatively, just use `cargo run -p day1` to run a single workspace directly (
 
 ## Day 5
 - [Print Queue](https://adventofcode.com/2024/day/5) -> ([Input](https://adventofcode.com/2024/day/5/input))
+
+## Day 6
+- [Guard Gallivant](https://adventofcode.com/2024/day/6) -> ([Input](https://adventofcode.com/2024/day/6/input))
